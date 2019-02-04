@@ -10,8 +10,6 @@ module WaiterApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-
-    # Auto-load the bot and its subdirectories
     config.paths.add File.join('app', 'bot'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'bot', '*')]
     # Settings in config/environments/* take precedence over those specified here.
@@ -19,3 +17,4 @@ module WaiterApp
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
